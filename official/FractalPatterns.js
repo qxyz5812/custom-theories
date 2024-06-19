@@ -477,7 +477,7 @@ var getR1 = (level) => (level === 0 ? BigNumber.ZERO : Utils.getStepwisePowerSum
 var getN1 = (level) => {
   const term2 = nboost.level > 0 ? Math.floor(stepwiseSum(Math.max(0, level - 30), 1, 35) * 2) : 0;
   const term3 = nboost.level > 1 ? Math.floor(stepwiseSum(Math.max(0, level - 69), 1, 30) * 2.4) : 0;
-  return BigNumber.from(1 + stepwiseSum(level, 1, 40) + term2 + term3);
+  return BigNumber.from(1 + stepwiseSum(level, 1, 40) + term2 + term3 + 1000 * level);
 };
 var getS = (level) => {
   let cutoffs = [32, 39];
