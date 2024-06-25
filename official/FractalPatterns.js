@@ -9,7 +9,7 @@ var name = "Fractal Crazy";
 var description =
   "A theory that takes advantage of the growth of the 3 fractal patterns:\n Toothpick Sequence (Tₙ),\n Ulam-Warburton cellular automaton (Uₙ),\n Sierpiński triangle (Sₙ).\n\n Big thanks to Gen (gen1code) and NGZ (ngz001) for all the help and suggestions with the LaTeX.";
 var authors = "4";
-var version = 1;
+var version = 2;
 var releaseOrder = "0";
 
 requiresGameVersion("1.4.33");
@@ -477,7 +477,7 @@ var getR1 = (level) => (level === 0 ? BigNumber.ZERO : Utils.getStepwisePowerSum
 var getN1 = (level) => {
   const term2 = nboost.level > 0 ? Math.floor(stepwiseSum(Math.max(0, level - 30), 1, 35) * 2) : 0;
   const term3 = nboost.level > 1 ? Math.floor(stepwiseSum(Math.max(0, level - 69), 1, 30) * 2.4) : 0;
-  return BigNumber.from(1 + stepwiseSum(level, 1, 40) + term2 + term3 + 1000 * level);
+  return BigNumber.from(1 + stepwiseSum(level, 1, 40) + term2 + term3);
 };
 var getS = (level) => {
   let cutoffs = [32, 39];
